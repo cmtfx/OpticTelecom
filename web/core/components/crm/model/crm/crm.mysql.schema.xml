@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="crm" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
+    <object class="crmContact" table="crm_contacts" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" index="index" />
+    	<field key="createdon" dbtype="timestamp" phptype="timestamp" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="createdby" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
+		<field key="editedon" dbtype="timestamp" phptype="timestamp" null="true" />
+		<field key="editedby" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
+		<field key="deleted" dbtype="enum" precision="'0','1'" phptype="string" null="false" default="0" index="index" />
+		<field key="deletedby" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
+		<field key="deletedon" dbtype="datetime" phptype="datetime" null="true" />
+		<field key="iocall" dbtype="enum" precision="'0','1','2','3'" phptype="string" null="true" />
+		<field key="next_prev_date" dbtype="datetime" phptype="datetime" null="true" />
+		<field key="address" dbtype="mediumtext" phptype="string" null="true" />
+		<field key="address_site" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="contacts" dbtype="mediumtext" phptype="string" null="true" />
+		<field key="status" dbtype="enum" precision="'0','1','2','3'" phptype="string" null="false" default="2" index="index" />
+		<field key="conversation" dbtype="longtext" phptype="string" null="true" />
+		<field key="comments" dbtype="mediumtext" phptype="string" null="true" />
+
+		<index alias="name" name="name" primary="false" unique="false" type="BTREE" >
+			<column key="name" length="" collation="A" null="false" />
+		</index>
+		<index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE" >
+			<column key="deleted" length="" collation="A" null="false" />
+		</index>
+		<index alias="status" name="status" primary="false" unique="false" type="BTREE" >
+			<column key="status" length="" collation="A" null="false" />
+		</index>
+	</object>
+    <object class="crmNumber" table="crm_numbers" extends="xPDOSimpleObject">
+    	<field key="code" dbtype="enum" precision="'495','499','812'" phptype="string" null="false" default="812" />
+    	<field key="number" dbtype="int" precision="7" attributes="unsigned" phptype="integer" null="false" index="index" />
+		<field key="createdon" dbtype="timestamp" phptype="timestamp" null="true" default="CURRENT_TIMESTAMP" />
+		<field key="createdby" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
+		<field key="editedon" dbtype="timestamp" phptype="timestamp" null="true" />
+		<field key="editedby" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
+		<field key="published" dbtype="enum" precision="'0','1'" phptype="string" null="false" default="1" />
+		<field key="pub_date" dbtype="timestamp" phptype="timestamp" null="true" />
+		<field key="unpub_date" dbtype="timestamp" phptype="timestamp" null="true" />
+		<field key="publishedon" dbtype="timestamp" phptype="timestamp" null="true" />
+		<field key="publishedby" dbtype="int" precision="10" phptype="integer" null="true" />
+		<field key="deleted" dbtype="enum" precision="'0','1'" phptype="string" null="false" default="0" index="index" />
+		<field key="deletedon" dbtype="timestamp" phptype="timestamp" null="true" />
+		<field key="deletedby" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
+		<field key="cost" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" index="index" />
+		<field key="mask" dbtype="varchar" precision="20" phptype="string" null="true" />
+		<field key="category" dbtype="enum" precision="'0','1'" phptype="string" null="false" default="1" />
+		<field key="status" dbtype="enum" precision="'0','1'" phptype="string" null="false" default="1" index="index" />
+		<field key="reservation" dbtype="enum" precision="'0','1'" phptype="string" null="false" default="0" />
+		<field key="reservationon" dbtype="timestamp" phptype="timestamp" null="true" />
+		<field key="carrier" dbtype="mediumtext" phptype="string" null="true" />
+		<field key="type" dbtype="enum" precision="'SIP','PBX'" phptype="string" null="true" />
+		<field key="address" dbtype="mediumtext" phptype="string" null="true" />
+		<field key="user" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
+		<field key="former_user" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" />
+		<field key="incubator" dbtype="enum" precision="'0','1'" phptype="string" null="false" default="0" />
+		<field key="incubatoron" dbtype="timestamp" phptype="timestamp" null="true" />
+
+		<index alias="number" name="number" primary="false" unique="false" type="BTREE" >
+			<column key="number" length="" collation="A" null="false" />
+		</index>
+		<index alias="deleted" name="deleted" primary="false" unique="false" type="BTREE" >
+			<column key="deleted" length="" collation="A" null="false" />
+		</index>
+		<index alias="cost" name="cost" primary="false" unique="false" type="BTREE" >
+			<column key="cost" length="" collation="A" null="true" />
+		</index>
+		<index alias="status" name="status" primary="false" unique="false" type="BTREE" >
+			<column key="status" length="" collation="A" null="false" />
+		</index>
+	</object>
+</model>

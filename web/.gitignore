@@ -1,0 +1,48 @@
+#игнорим все корне
+/*
+!/.gitignore
+
+#отменяем игнор для нужных папок
+!/assets/
+!/core/
+!/manager/
+ 
+#игнорим все в assets 
+/assets/*
+#отменяем игнор для нужных папок
+!/assets/components/
+ 
+# Все тоже самое
+/assets/components/*
+!/assets/components/basket/
+!/assets/components/modxsite/
+#/assets/components/modxsite/templates/*
+!/assets/components/modxsite/templates/shopmodx/
+!/assets/components/modxsite/templates/skins/
+!/assets/components/modxsite/templates/depricated/
+!/assets/components/modcaptcha/
+!/assets/components/modhybridauth/
+ 
+/core/*
+!/core/components/
+ 
+/core/components/*
+!/core/components/basket/
+!/core/components/billing/
+!/core/components/modxsite/
+#/core/components/modxsite/templates/*
+!/core/components/modxsite/templates/shopmodx/
+!/core/components/modxsite/templates/skins/
+!/core/components/modxsite/templates/depricated/
+!/core/components/shopmodxbox/
+!/core/components/shopmodxgroupedit/
+!/core/components/edinayakassa/
+!/core/components/modcaptcha/
+!/core/components/modhybridauth/
+!/core/components/shopmodxunitpay/
+!core/components/crm/
+/manager/*
+!/manager/components/
+/manager/components/*
+!/manager/components/basket/
+!/manager/components/shopmodxgroupedit/
